@@ -1,13 +1,6 @@
 characters_to_phonetics_json = '';
 phonetics_to_characters_json = '';
 
-$.get( "./char2phon.csv", function( data1 ) {
-	characters_to_phonetics_json = csv2json(data1);
-	$.get( "./phon2char.csv", function( data2 ) {
-		phonetics_to_characters_json = csv2json(data2);
-	});
-});
-
 function csv2json(csv)
 {
 	var rows = csv.split('\r\n');
@@ -40,6 +33,14 @@ function csv2json(csv)
 	}
 	return json;
 }
+
+$.get( "./char2phon.csv", function( data1 ) {
+	characters_to_phonetics_json = csv2json(data1);
+	$.get( "./phon2char.csv", function( data2 ) {
+		phonetics_to_characters_json = csv2json(data2);
+	});
+});
+
 
 function do_characters_to_phonetics()
 {

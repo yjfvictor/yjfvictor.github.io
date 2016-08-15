@@ -81,7 +81,7 @@ function do_phonetics_to_characters()
 {
 	var json = phonetics_to_characters_json;
 	var phonetics = $("#input").val();
-	var phonetics_list = phonetics.split(' ');
+	var phonetics_list = phonetics.split(/[^A-Za-z]+/);
 	var characters = '';
 	var phonetics_characters_mixed = '';
 

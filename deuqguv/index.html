@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>中古漢語四拼4.0</title>
+		<script type="text/javascript" charset="UTF-8" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" charset="UTF-8" src="index.js"></script>
+	</head>
+	<body>
+		<form action="" method="post">
+			<table border="0">
+				<tr><td colspan="3"><textarea rows="20" cols="150" id="input"></textarea></td></tr>
+				<tr><td colspan="3">&nbsp;</td></tr>
+				<tr style="text-align: center;">
+					<td><label for="comparison"><input type="checkbox" id="comparison" />字音對照</label></td>
+					<td><input type="button" id="characters_to_phonetics" value="漢字轉中古四拼" onclick="do_characters_to_phonetics()" /></td>
+					<td><input type="button" id="phonetics_to_characters" value="中古四拼轉漢字" onclick="do_phonetics_to_characters()" /></td>
+				</tr>
+				<tr><td colspan="3">&nbsp;</td></tr>
+				<tr><td colspan="3"><textarea rows="20" cols="150" id="output" readonly="readonly"></textarea></td></tr>
+			</table>
+		</form>
+	</body>
+</html>

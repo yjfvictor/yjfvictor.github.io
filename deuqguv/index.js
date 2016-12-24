@@ -1,43 +1,10 @@
 characters_to_phonetics_json = '';
 phonetics_to_characters_json = '';
 
-function csv2json(csv)
-{
-	var rows = csv.split('\r\n');
-	if (rows.length === 1)
-	{
-		rows = csv.split('\n');
-	}
-	var json = {};
-	for (var i = 1; i < rows.length; ++i)
-	{
-		try
-		{
-			var row = rows[i].split(',');
-
-			var key = row[0];
-			if (key === undefined)
-				continue;
-			key = key.replace(/"/g, '');
-
-			var value = row[1];
-			if (value === undefined)
-				continue;
-			value = value.replace(/"/g, '');
-
-			json[key] = value;
-		}
-		catch (e)
-		{
-		}
-	}
-	return json;
-}
-
-$.get( "./char2phon.csv", function( data1 ) {
-	characters_to_phonetics_json = csv2json(data1);
-	$.get( "./phon2char.csv", function( data2 ) {
-		phonetics_to_characters_json = csv2json(data2);
+$.getJSON( "./char2phon.json", function( data1 ) {
+	characters_to_phonetics_json = (data1);
+	$.getJSON( "./phon2char.json", function( data2 ) {
+		phonetics_to_characters_json = data2;
 	});
 });
 
